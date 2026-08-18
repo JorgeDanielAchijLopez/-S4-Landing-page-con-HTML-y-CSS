@@ -24,8 +24,10 @@ html {
 
 body {
     margin: 0;
+
     background-color: var(--color-bg);
     color: var(--color-text);
+
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
 }
@@ -45,7 +47,7 @@ section {
 }
 
 /* =========================
-   Encabezado y navegación
+   Navegación
    ========================= */
 
 .site-header {
@@ -70,10 +72,6 @@ section {
     text-transform: uppercase;
 
     transition: color 0.25s ease;
-}
-
-.brand:hover {
-    color: var(--color-accent);
 }
 
 .nav-list {
@@ -122,6 +120,7 @@ section {
     margin-bottom: 0.75rem;
 
     color: var(--color-accent);
+
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.15rem;
@@ -141,11 +140,12 @@ section {
     height: 32rem;
 
     border: 1px solid var(--color-border);
+
     object-fit: cover;
 }
 
 /* =========================
-   Botones y enlaces
+   Botones
    ========================= */
 
 .button {
@@ -168,7 +168,7 @@ section {
 }
 
 /* =========================
-   Secciones generales
+   Secciones
    ========================= */
 
 .section {
@@ -194,7 +194,7 @@ section {
 }
 
 /* =========================
-   Colección
+   Nueva colección
    ========================= */
 
 .product-grid {
@@ -212,6 +212,7 @@ section {
 
 .product-card h3 {
     margin-top: 0;
+
     font-size: 1.3rem;
 }
 
@@ -247,23 +248,20 @@ section {
 
 .featured-card:hover {
     transform: translateY(-0.4rem);
+
     border-color: var(--color-accent);
+
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.08);
 }
 
-.product-placeholder {
-    min-height: 16rem;
+.featured-image {
+    width: 100%;
+    height: 18rem;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-bottom: 1px solid var(--color-border);
 
-    background-color: #e7ded2;
-    color: var(--color-accent);
-
-    font-size: 3rem;
-    font-weight: 700;
-    letter-spacing: 0.3rem;
+    object-fit: cover;
+    object-position: center;
 }
 
 .featured-content {
@@ -272,6 +270,7 @@ section {
 
 .featured-content h3 {
     margin: 0 0 0.75rem;
+
     font-size: 1.4rem;
 }
 
@@ -283,6 +282,7 @@ section {
     margin: 0 0 0.5rem;
 
     color: var(--color-accent);
+
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.1rem;
@@ -293,6 +293,7 @@ section {
     margin: 1.25rem 0;
 
     color: var(--color-dark);
+
     font-size: 1.25rem;
     font-weight: 700;
 }
@@ -311,11 +312,6 @@ section {
         border-color 0.25s ease;
 }
 
-.product-link:hover {
-    color: var(--color-dark);
-    border-color: var(--color-dark);
-}
-
 /* =========================
    Nosotros
    ========================= */
@@ -328,6 +324,7 @@ section {
     max-width: 45rem;
 
     color: var(--color-muted);
+
     font-size: 1.05rem;
 }
 
@@ -349,6 +346,7 @@ section {
 
 .contact-box h3 {
     margin-top: 0;
+
     font-size: 1.6rem;
 }
 
@@ -385,10 +383,6 @@ section {
     font-weight: 700;
 }
 
-.site-footer a:hover {
-    text-decoration: underline;
-}
-
 /* =========================
    Estados interactivos
    ========================= */
@@ -404,6 +398,7 @@ section {
         transform 0.25s ease;
 }
 
+.brand:hover,
 .nav-link:hover {
     color: var(--color-accent);
 }
@@ -419,7 +414,17 @@ section {
 
 .product-card:hover {
     transform: translateY(-0.35rem);
+
     border-color: var(--color-accent);
+}
+
+.product-link:hover {
+    color: var(--color-dark);
+    border-color: var(--color-dark);
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
 }
 
 a:focus-visible {
@@ -467,6 +472,10 @@ a:focus-visible {
     .product-grid,
     .featured-grid {
         grid-template-columns: 1fr;
+    }
+
+    .featured-image {
+        height: 22rem;
     }
 
     .contact-box {

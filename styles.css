@@ -1,243 +1,4 @@
 /* =========================
-   Variables y estilos base
-   ========================= */
-
-:root {
-    --color-bg: #f5f1eb;
-    --color-surface: #ffffff;
-    --color-text: #1d1d1d;
-    --color-muted: #68635d;
-    --color-accent: #8b6f47;
-    --color-dark: #171717;
-    --color-border: #ddd5ca;
-
-    --max-width: 1200px;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-/* =========================
-   Encabezado y navegación
-   ========================= */
-
-.site-header {
-    background-color: var(--color-surface);
-    border-bottom: 1px solid var(--color-border);
-}
-
-.navbar {
-    width: min(90%, var(--max-width));
-    margin: 0 auto;
-    padding: 1.25rem 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.brand {
-    font-size: 1.35rem;
-    font-weight: 700;
-    letter-spacing: 0.08rem;
-    text-transform: uppercase;
-}
-
-.nav-list {
-    display: flex;
-    gap: 1.5rem;
-
-    margin: 0;
-    padding: 0;
-
-    list-style: none;
-}
-
-.nav-link {
-    font-size: 0.95rem;
-}
-
-/* =========================
-   Sección principal
-   ========================= */
-
-#inicio {
-    width: min(90%, var(--max-width));
-    margin: 0 auto;
-}
-
-.hero {
-    min-height: 75vh;
-    padding: 4rem 0;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 3rem;
-}
-
-.hero-content h1 {
-    margin: 0 0 1rem;
-
-    font-size: clamp(2.8rem, 7vw, 5.5rem);
-    line-height: 1;
-    letter-spacing: -0.15rem;
-}
-
-.eyebrow {
-    margin-bottom: 0.75rem;
-
-    color: var(--color-accent);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.15rem;
-    text-transform: uppercase;
-}
-
-.hero-text {
-    max-width: 34rem;
-    margin-bottom: 2rem;
-
-    color: var(--color-muted);
-    font-size: 1.1rem;
-}
-
-.hero-image {
-    width: 100%;
-    height: 32rem;
-
-    border: 1px solid var(--color-border);
-    object-fit: cover;
-}
-
-.button {
-    display: inline-block;
-
-    padding: 0.85rem 1.5rem;
-
-    background-color: var(--color-dark);
-    border: 1px solid var(--color-dark);
-    color: #ffffff;
-
-    font-weight: 700;
-}
-
-/* =========================
-   Secciones
-   ========================= */
-
-.section {
-    width: min(90%, var(--max-width));
-    margin: 0 auto;
-    padding: 5rem 0;
-}
-
-.section-heading {
-    max-width: 42rem;
-    margin-bottom: 2.5rem;
-}
-
-.section-heading h2 {
-    margin: 0 0 1rem;
-
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    line-height: 1.1;
-}
-
-.section-heading p {
-    color: var(--color-muted);
-}
-
-/* =========================
-   Colección
-   ========================= */
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-}
-
-.product-card {
-    padding: 2rem;
-
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-}
-
-.product-card h3 {
-    margin-top: 0;
-    font-size: 1.3rem;
-}
-
-.product-card p {
-    margin-bottom: 0;
-    color: var(--color-muted);
-}
-
-/* =========================
-   Nosotros
-   ========================= */
-
-.about {
-    border-top: 1px solid var(--color-border);
-}
-
-.about > p {
-    max-width: 45rem;
-    color: var(--color-muted);
-    font-size: 1.05rem;
-}
-
-.text-link {
-    display: inline-block;
-    margin-top: 1rem;
-
-    color: var(--color-accent);
-    font-weight: 700;
-}
-
-/* =========================
-   Pie de página
-   ========================= */
-
-.site-footer {
-    margin-top: 3rem;
-    padding: 2rem 5%;
-
-    background-color: var(--color-dark);
-    color: #ffffff;
-
-    text-align: center;
-}
-
-.site-footer p {
-    margin: 0;
-}
-/* =========================
    Estados interactivos
    ========================= */
 
@@ -274,6 +35,160 @@ a:focus-visible {
     outline: 3px solid var(--color-accent);
     outline-offset: 4px;
 }
+
+.brand {
+    transition: color 0.25s ease;
+}
+
+.brand:hover {
+    color: var(--color-accent);
+}
+
+section {
+    scroll-margin-top: 2rem;
+}
+
+/* =========================
+   Prendas destacadas
+   ========================= */
+
+.featured {
+    border-top: 1px solid var(--color-border);
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.featured-card {
+    overflow: hidden;
+
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.featured-card:hover {
+    transform: translateY(-0.4rem);
+    border-color: var(--color-accent);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.08);
+}
+
+.product-placeholder {
+    min-height: 16rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #e7ded2;
+    color: var(--color-accent);
+
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 0.3rem;
+}
+
+.featured-content {
+    padding: 1.75rem;
+}
+
+.featured-content h3 {
+    margin: 0 0 0.75rem;
+    font-size: 1.4rem;
+}
+
+.featured-content > p:not(.product-category):not(.product-price) {
+    color: var(--color-muted);
+}
+
+.product-category {
+    margin: 0 0 0.5rem;
+
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+.product-price {
+    margin: 1.25rem 0;
+
+    color: var(--color-dark);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.product-link {
+    display: inline-block;
+    padding-bottom: 0.2rem;
+
+    border-bottom: 1px solid var(--color-accent);
+    color: var(--color-accent);
+
+    font-weight: 700;
+
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.product-link:hover {
+    color: var(--color-dark);
+    border-color: var(--color-dark);
+}
+
+/* =========================
+   Contacto
+   ========================= */
+
+.contact {
+    border-top: 1px solid var(--color-border);
+}
+
+.contact-box {
+    max-width: 50rem;
+    padding: 2.5rem;
+
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+}
+
+.contact-box h3 {
+    margin-top: 0;
+    font-size: 1.6rem;
+}
+
+.contact-box p {
+    max-width: 38rem;
+    margin-bottom: 1.75rem;
+
+    color: var(--color-muted);
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+.site-footer a {
+    display: inline-block;
+    margin-top: 0.75rem;
+
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
 /* =========================
    Diseño responsive
    ========================= */
@@ -311,21 +226,16 @@ a:focus-visible {
         max-height: 35rem;
     }
 
-    .product-grid {
+    .product-grid,
+    .featured-grid {
         grid-template-columns: 1fr;
+    }
+
+    .contact-box {
+        padding: 1.75rem;
     }
 
     .section {
         padding: 3.5rem 0;
     }
-}
-.brand {
-    transition: color 0.25s ease;
-}
-
-.brand:hover {
-    color: var(--color-accent);
-}
-section {
-    scroll-margin-top: 2rem;
 }

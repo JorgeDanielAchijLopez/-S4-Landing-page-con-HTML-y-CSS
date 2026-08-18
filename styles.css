@@ -319,3 +319,13 @@ a:focus-visible {
         padding: 3.5rem 0;
     }
 }
+.brand {
+    transition: color 0.25s ease;
+}
+
+.brand:hover {
+    color: var(--color-accent);
+}
+section {
+    scroll-margin-top: 2rem;
+}

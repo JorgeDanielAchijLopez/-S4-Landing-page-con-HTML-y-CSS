@@ -1,42 +1,74 @@
 /* =========================
-   Estados interactivos
+   Variables y estilos base
    ========================= */
 
-.nav-link,
-.button,
-.text-link,
-.product-card {
-    transition:
-        color 0.25s ease,
-        background-color 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease;
+:root {
+    --color-bg: #f5f1eb;
+    --color-surface: #ffffff;
+    --color-text: #1d1d1d;
+    --color-muted: #68635d;
+    --color-accent: #8b6f47;
+    --color-dark: #171717;
+    --color-border: #ddd5ca;
+
+    --max-width: 1200px;
 }
 
-.nav-link:hover {
-    color: var(--color-accent);
+* {
+    box-sizing: border-box;
 }
 
-.button:hover {
-    background-color: transparent;
-    color: var(--color-dark);
+html {
+    scroll-behavior: smooth;
 }
 
-.text-link:hover {
-    color: var(--color-dark);
+body {
+    margin: 0;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
 }
 
-.product-card:hover {
-    transform: translateY(-0.35rem);
-    border-color: var(--color-accent);
+img {
+    display: block;
+    max-width: 100%;
 }
 
-a:focus-visible {
-    outline: 3px solid var(--color-accent);
-    outline-offset: 4px;
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+section {
+    scroll-margin-top: 2rem;
+}
+
+/* =========================
+   Encabezado y navegación
+   ========================= */
+
+.site-header {
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.navbar {
+    width: min(90%, var(--max-width));
+    margin: 0 auto;
+    padding: 1.25rem 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .brand {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+
     transition: color 0.25s ease;
 }
 
@@ -44,8 +76,147 @@ a:focus-visible {
     color: var(--color-accent);
 }
 
-section {
-    scroll-margin-top: 2rem;
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.nav-link {
+    font-size: 0.95rem;
+}
+
+/* =========================
+   Hero
+   ========================= */
+
+#inicio {
+    width: min(90%, var(--max-width));
+    margin: 0 auto;
+}
+
+.hero {
+    min-height: 75vh;
+    padding: 4rem 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+}
+
+.hero-content h1 {
+    margin: 0 0 1rem;
+
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    line-height: 1;
+    letter-spacing: -0.15rem;
+}
+
+.eyebrow {
+    margin-bottom: 0.75rem;
+
+    color: var(--color-accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+}
+
+.hero-text {
+    max-width: 34rem;
+    margin-bottom: 2rem;
+
+    color: var(--color-muted);
+    font-size: 1.1rem;
+}
+
+.hero-image {
+    width: 100%;
+    height: 32rem;
+
+    border: 1px solid var(--color-border);
+    object-fit: cover;
+}
+
+/* =========================
+   Botones y enlaces
+   ========================= */
+
+.button {
+    display: inline-block;
+    padding: 0.85rem 1.5rem;
+
+    background-color: var(--color-dark);
+    border: 1px solid var(--color-dark);
+    color: #ffffff;
+
+    font-weight: 700;
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 1rem;
+
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+/* =========================
+   Secciones generales
+   ========================= */
+
+.section {
+    width: min(90%, var(--max-width));
+    margin: 0 auto;
+    padding: 5rem 0;
+}
+
+.section-heading {
+    max-width: 42rem;
+    margin-bottom: 2.5rem;
+}
+
+.section-heading h2 {
+    margin: 0 0 1rem;
+
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.1;
+}
+
+.section-heading p {
+    color: var(--color-muted);
+}
+
+/* =========================
+   Colección
+   ========================= */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.product-card {
+    padding: 2rem;
+
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+}
+
+.product-card h3 {
+    margin-top: 0;
+    font-size: 1.3rem;
+}
+
+.product-card p {
+    color: var(--color-muted);
 }
 
 /* =========================
@@ -146,6 +317,21 @@ section {
 }
 
 /* =========================
+   Nosotros
+   ========================= */
+
+.about {
+    border-top: 1px solid var(--color-border);
+}
+
+.about > p {
+    max-width: 45rem;
+
+    color: var(--color-muted);
+    font-size: 1.05rem;
+}
+
+/* =========================
    Contacto
    ========================= */
 
@@ -177,6 +363,20 @@ section {
    Footer
    ========================= */
 
+.site-footer {
+    margin-top: 3rem;
+    padding: 2rem 5%;
+
+    background-color: var(--color-dark);
+    color: #ffffff;
+
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
 .site-footer a {
     display: inline-block;
     margin-top: 0.75rem;
@@ -190,6 +390,44 @@ section {
 }
 
 /* =========================
+   Estados interactivos
+   ========================= */
+
+.nav-link,
+.button,
+.text-link,
+.product-card {
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-accent);
+}
+
+.button:hover {
+    background-color: transparent;
+    color: var(--color-dark);
+}
+
+.text-link:hover {
+    color: var(--color-dark);
+}
+
+.product-card:hover {
+    transform: translateY(-0.35rem);
+    border-color: var(--color-accent);
+}
+
+a:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
+/* =========================
    Diseño responsive
    ========================= */
 
@@ -200,7 +438,6 @@ section {
     }
 
     .nav-list {
-        flex-wrap: wrap;
         justify-content: center;
         gap: 1rem;
     }
@@ -208,6 +445,7 @@ section {
     .hero {
         min-height: auto;
         padding: 3rem 0;
+
         grid-template-columns: 1fr;
         gap: 2rem;
     }

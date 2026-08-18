@@ -237,3 +237,40 @@ a {
 .site-footer p {
     margin: 0;
 }
+/* =========================
+   Estados interactivos
+   ========================= */
+
+.nav-link,
+.button,
+.text-link,
+.product-card {
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-accent);
+}
+
+.button:hover {
+    background-color: transparent;
+    color: var(--color-dark);
+}
+
+.text-link:hover {
+    color: var(--color-dark);
+}
+
+.product-card:hover {
+    transform: translateY(-0.35rem);
+    border-color: var(--color-accent);
+}
+
+a:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 4px;
+}
